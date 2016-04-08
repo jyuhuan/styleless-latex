@@ -1,0 +1,32 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ymath}[2016/04/08 Yuhuan's Macros]
+
+\RequirePackage{amsfonts}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+
+% Remove the spaces around \left([{ and \right)]}
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+% Math Functions
+\newcommand{\Cond}[2]{#1 \mid #2}
+\newcommand{\Exp}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\CondExp}[2]{\mathbb{E}\left[\Cond{#1}{#2}\right]}
+\newcommand{\Prob}[1]{\mathrm{P}\left(#1\right)}
+\newcommand{\CondProb}[2]{\mathrm{P}\left(\Cond{#1}{#2}\right)}
+\newcommand{\Var}[1]{\mathrm{var}\left[#1\right]}
+\newcommand{\CondVar}[2]{\mathrm{var}\left[\Cond{#1}{#2}\right]}
+\newcommand{\Cov}[1]{\mathrm{cov}\left[#1\right]}
+\newcommand{\ArgMax}[2]{\mathop{\arg \max}\limits_{#1} {#2} }
+\newcommand{\ArgMin}[2]{\mathop{\arg \min}\limits_{#1} {#2} }
+\newcommand{\Sum}[3]{\sum_{#1}^{#2}{#3}}
+\newcommand{\Prod}[3]{\prod_{#1}^{#2}{#3}}
+\newcommand{\SetUnion}[3]{\bigcup_{#1}^{#2}{#3}}
+\newcommand{\SetIntersect}[3]{\bigcap_{#1}^{#2}{#3}}
+
+
+
