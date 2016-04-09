@@ -17,8 +17,35 @@
 \RequirePackage[font=small,labelfont=bf]{caption}
 
 % Don't just just hate \begin{x} \end{x}? 
-\newcommand{\Document}[1]{\begin{document}#1\end{document}}
-\newcommand{\Section}[2]{\section{#1} #2 }
+\newcommand{\WrapIn}[2]{\begin{#1} #2 \end{#1}}
+\newcommand{\Document}[1]{\WrapIn{document}{#1}}
+\newcommand{\Section}[2]{\section{#1} #2}
+\newcommand{\Subsection}[2]{\subsection{#1} #2}
+\newcommand{\Subsubection}[2]{\subsubsection{#1} #2}
+\newcommand{\Abstract}[1]{\WrapIn{abstract}{#1}}
+\newcommand{\Quote}[1]{\WrapIn{quote}{#1}}
+\newcommand{\Title}[1]{\title{#1}\maketitle}
 %\newcommand{\}[1]{\begin{}#1\end{}}
 %\newcommand{\}[1]{\begin{}#1\end{}}
 %\newcommand{\}[1]{\begin{}#1\end{}}
+%\newcommand{\}[1]{\begin{}#1\end{}}
+
+\newcommand{\UnorderedList}[1]{\WrapIn{itemize}{#1}}
+\let \Ul \UnorderedList
+\newcommand{\OrderedList}[2][\arabic*]{\begin{enumerate}[label=#1] #2 \end{enumerate} }
+\let \Ol \OrderedList
+\newcommand{\Item}[1]{\item #1}
+\let \Li \Item
+
+
+% Text Styles
+\newcommand{\Bf}[1]{\textbf{#1}}
+\newcommand{\It}[1]{\textbf{#1}}
+\newcommand{\Tt}[1]{\textbf{#1}}
+%\newcommand{}[]{}
+%\newcommand{}[]{}
+%\newcommand{}[]{}
+%\newcommand{}[]{}
+
+
+
