@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+\usepackage{ymath}
+\usepackage{yutil}
+
+\Document{
+	\Title{Something}
+
+	\Abstract{Test abstract}
+	
+	\Section{My Section Heading}{
+	
+		\Subsection{Unordered Lists}{
+			\UnorderedList{
+				\Item{First item}
+				\Item{Second item}
+				\Item{Third item}
+			}
+			
+			\Ul{
+				\Li{First item}
+				\Li{Second item}
+				\Li{Third item}
+			}			
+		}
+	
+		\Subsection{Ordered List}{
+			\OrderedList{
+				\Item{First item}
+				\Item{Second item}
+				\Item{Third item}
+			}
+		}
+		
+	}
+
+
+
+	\Subsection{Math Demonstration}{
+	
+		$$ \bfalpha \calC \bbR $$
+	
+		\CenteredEquations{
+			\CondExp{x}{y} \\
+			\Prob{\Cond{x}{y}}\\
+			\ArgMax{x}{\CondProb{x}{y}}\\
+			\Sum{x}{y}{z} \\
+			\SetUnion{x}{y}{z}
+		}
+	}
+
+
+}
+
+
