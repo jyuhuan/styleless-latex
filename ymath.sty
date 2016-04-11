@@ -1,6 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ymath}[2016/04/08 Yuhuan's Macros]
 
+\RequirePackage{yutil}
 \RequirePackage{amsfonts}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
@@ -16,25 +17,40 @@
 \newcommand{\Cond}[2]{#1 \middle| #2}
 \newcommand{\Exp}[1]{\mathbb{E}\left[#1\right]}
 \newcommand{\CondExp}[2]{\mathbb{E}\left[\Cond{#1}{#2}\right]}
-\newcommand{\Prob}[1]{\mathbb{P}\left(#1\right)}
+\newcommand{\Prob}[2][]{\mathbb{P}_{#1}\left(#2\right)}
+\let \Pr \Prob
 \newcommand{\CondProb}[2]{\mathbb{P}\left(\Cond{#1}{#2}\right)}
+\let \CondPr \CondProb
+\newcommand{\Given}[0]{\middle|}
 \newcommand{\Var}[1]{\mathrm{var}\left[#1\right]}
 \newcommand{\CondVar}[2]{\mathrm{var}\left[\Cond{#1}{#2}\right]}
 \newcommand{\Cov}[1]{\mathrm{cov}\left[#1\right]}
 \newcommand{\ArgMax}[2]{\mathop{\arg \max}\limits_{#1} {#2} }
 \newcommand{\ArgMin}[2]{\mathop{\arg \min}\limits_{#1} {#2} }
-\newcommand{\Sum}[3]{\sum_{#1}^{#2}{#3}}
-\newcommand{\Prod}[3]{\prod_{#1}^{#2}{#3}}
-\newcommand{\Union}[3]{\bigcup_{#1}^{#2}{#3}}
-\newcommand{\Intersect}[3]{\bigcap_{#1}^{#2}{#3}}
-\newcommand{\Frac}[2]{\cfrac{#1}{#2}}
+\newcommand{\Sum}[3][]{\sum_{#2}^{#1}{#3}}
+\newcommand{\Prod}[3][]{\prod_{#2}^{#1}{#3}}
+\newcommand{\Union}[3][]{\bigcup_{#2}^{#1}{#3}}
+\newcommand{\Intersect}[3][]{\bigcap_{#2}^{#1}{#3}}
+\newcommand{\Frac}[2]{\dfrac{#1}{#2}}
 
-\newcommand{\CenteredEquations}[1]{\begin{gather}#1 \end{gather}}
+\newcommand{\UnnumberedDisplayEquations}[1]{$$#1$$}
+
+% Don't just just hate \begin{x} \end{x}? 
+\newcommand{\AlignedEquations}[1]{\WrapIn{align}{#1}}
+\newcommand{\UnnumberedAlignedEquations}[1]{\WrapIn{align*}{#1}}
+\newcommand{\CenteredEquations}[1]{\WrapIn{gather}{#1}}
+
+% Semantic Symbols
+\newcommand{\Mul}[0]{\cdot}
+\newcommand{\XMul}[0]{\times}
 
 % Enclosures
-\newcommand{\PAREN}[1]{\left(\right)}
-\newcommand{\BRACK}[1]{\left[\right]}
-\newcommand{\BRACE}[1]{\left{\right}}
+\newcommand{\PAREN}[1]{\left(#1\right)}
+\newcommand{\BRACK}[1]{\left[#1\right]}
+\newcommand{\BRACE}[1]{\left{#1\right}}
+
+% More Sweeteners
+\newcommand{\Set}[1]{\{#1\}}
 
 % Spacial characters
 \newcommand{\bfa}[0]{\mathbf{a}}
