@@ -13,8 +13,11 @@
 \RequirePackage{framed}
 \RequirePackage[ruled]{algorithm2e}
 \RequirePackage{graphicx}
-\RequirePackage{stix}
+\RequirePackage[ruled]{algorithm2e}
 \RequirePackage[font=small,labelfont=bf]{caption}
+
+% Package configurations
+\SetKwProg{Fn}{Function}{}{}
 
 % Don't just just hate \begin{x} \end{x}? 
 \newcommand{\WrapIn}[2]{\begin{#1} #2 \end{#1}}
@@ -28,14 +31,14 @@
 \newcommand{\Abstract}[1]{\WrapIn{abstract}{#1}}
 \newcommand{\BlockQuote}[1]{\WrapIn{quote}{#1}}
 \newcommand{\Title}[2][]{\author{#1} \title{#2}\maketitle}
-%\newcommand{\}[1]{\begin{}#1\end{}}
+\newcommand{\Algorithm}[2]{\WrapIn{algorithm}{\caption{#1}#2}}
 %\newcommand{\}[1]{\begin{}#1\end{}}
 %\newcommand{\}[1]{\begin{}#1\end{}}
 %\newcommand{\}[1]{\begin{}#1\end{}}
 
 \newcommand{\UnorderedList}[1]{\WrapIn{itemize}{#1}}
 \let \Ul \UnorderedList
-\newcommand{\OrderedList}[2][\arabic*]{\begin{enumerate}[label=#1] #2 \end{enumerate} }
+\newcommand{\OrderedList}[2][\arabic*.]{\begin{enumerate}[label=#1] #2 \end{enumerate} }
 \let \Ol \OrderedList
 \newcommand{\Item}[1]{\item #1}
 \let \Li \Item
@@ -46,6 +49,7 @@
 \newcommand{\It}[1]{\textit{#1}}
 \newcommand{\Tt}[1]{\texttt{#1}}
 \newcommand{\Sc}[1]{\textsc{#1}}
+\newcommand{\Rm}[1]{\textrm{#1}}
 %\newcommand{}[]{}
 %\newcommand{}[]{}
 %\newcommand{}[]{}
@@ -53,8 +57,19 @@
 
 % More Sweeteners
 \newcommand{\id}[1]{\label{#1}}
+\newcommand{\Ref}[1]{\ref{#1}}
 \newcommand{\RefEq}[1]{Eq. (\ref{#1})}
 \newcommand{\RefFigure}[1]{Figure \ref{#1}}
 \newcommand{\RefTable}[1]{Table \ref{#1}}
+\newcommand{\RefAlgorithm}[1]{Algorithm \ref{#1}}
 \newcommand{\PageBreak}[0]{\clearpage}
 \newcommand{\LineBreak}[0]{\\}
+\newcommand{\Header}[3]{
+  \pagestyle{fancy}
+  \makeatletter
+    \lhead{#1}
+    \chead{#2}
+    \rhead{#3}
+  \makeatother
+}
+\newcommand{\FooterWithPageOf}[0]{\cfoot{Page \thepage\ of \pageref{LastPage}}}

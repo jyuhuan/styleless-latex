@@ -32,6 +32,8 @@
 \newcommand{\Union}[3][]{\bigcup_{#2}^{#1}{#3}}
 \newcommand{\Intersect}[3][]{\bigcap_{#2}^{#1}{#3}}
 \newcommand{\Frac}[2]{\dfrac{#1}{#2}}
+\newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Ceiling}[1]{\left\lceil #1 \right\rceil}
 
 \newcommand{\UnnumberedDisplayEquations}[1]{$$#1$$}
 
@@ -39,6 +41,7 @@
 \newcommand{\AlignedEquations}[1]{\WrapIn{align}{#1}}
 \newcommand{\UnnumberedAlignedEquations}[1]{\WrapIn{align*}{#1}}
 \newcommand{\CenteredEquations}[1]{\WrapIn{gather}{#1}}
+\newcommand{\UnnumberedCenteredEquations}[1]{\WrapIn{gather*}{#1}}
 
 % Semantic Symbols
 \newcommand{\Mul}[0]{\cdot}
@@ -53,6 +56,8 @@
 \newcommand{\Set}[1]{\{#1\}}
 
 % Spacial characters
+\newcommand{\omicron}[0]{o}
+\newcommand{\Omicron}[0]{O}
 \newcommand{\bfa}[0]{\mathbf{a}}
 \newcommand{\bfb}[0]{\mathbf{b}}
 \newcommand{\bfc}[0]{\mathbf{c}}
@@ -119,7 +124,7 @@
 \newcommand{\bfmu}[0]{\boldsymbol{\mu}}
 \newcommand{\bfnu}[0]{\boldsymbol{\nu}}
 \newcommand{\bfxi}[0]{\boldsymbol{\xi}}
-\newcommand{\bfomicron}[0]{\boldsymbol{o}}
+\newcommand{\bfomicron}[0]{\boldsymbol{omicron}}
 \newcommand{\bfpi}[0]{\boldsymbol{\pi}}
 \newcommand{\bfrho}[0]{\boldsymbol{\rho}}
 \newcommand{\bfsigma}[0]{\boldsymbol{\sigma}}
@@ -143,7 +148,7 @@
 \newcommand{\bfMu}[0]{\boldsymbol{\Mu}}
 \newcommand{\bfNu}[0]{\boldsymbol{\Nu}}
 \newcommand{\bfXi}[0]{\boldsymbol{\Xi}}
-\newcommand{\bfOmicron}[0]{\boldsymbol{O}}
+\newcommand{\bfOmicron}[0]{\boldsymbol{\Omicron}}
 \newcommand{\bfPi}[0]{\boldsymbol{\Pi}}
 \newcommand{\bfRho}[0]{\boldsymbol{\Rho}}
 \newcommand{\bfSigma}[0]{\boldsymbol{\Sigma}}
