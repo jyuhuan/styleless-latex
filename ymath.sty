@@ -14,11 +14,15 @@
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 
 % Handy Functions
+\newcommand{\Func}[2]{#1 \PAREN{#2}}
+\let \Fn \Func
 \newcommand{\Cond}[2]{#1 \middle| #2}
-\newcommand{\Exp}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\Exp}[2][]{\mathbb{E}_{#1}\left[#2\right]}
 \newcommand{\CondExp}[2]{\mathbb{E}\left[\Cond{#1}{#2}\right]}
 \newcommand{\Prob}[2][]{\mathbb{P}_{#1}\left(#2\right)}
+\newcommand{\UnnormProb}[2][]{\widetilde{\mathbb{P}}_{#1}\left(#2\right)}
 \let \Pr \Prob
+\let \UPr \UnnormProb
 \newcommand{\CondProb}[2]{\mathbb{P}\left(\Cond{#1}{#2}\right)}
 \let \CondPr \CondProb
 \newcommand{\Given}[0]{\middle|}
@@ -27,6 +31,8 @@
 \newcommand{\Cov}[1]{\mathrm{cov}\left[#1\right]}
 \newcommand{\ArgMax}[2]{\mathop{\arg \max}\limits_{#1} {#2} }
 \newcommand{\ArgMin}[2]{\mathop{\arg \min}\limits_{#1} {#2} }
+\newcommand{\Min}[2]{\mathop{\min}\limits_{#1} {#2} }
+\newcommand{\Max}[2]{\mathop{\min}\limits_{#1} {#2} }
 \newcommand{\Sum}[3][]{\sum_{#2}^{#1}{#3}}
 \newcommand{\Prod}[3][]{\prod_{#2}^{#1}{#3}}
 \newcommand{\Union}[3][]{\bigcup_{#2}^{#1}{#3}}
@@ -34,7 +40,11 @@
 \newcommand{\Frac}[2]{\dfrac{#1}{#2}}
 \newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\Ceiling}[1]{\left\lceil #1 \right\rceil}
+\let \Ceil \Ceiling
+\newcommand{\T}[0]{^\Rm{T}}
 
+\newcommand{\PartialDerivative}[3]{\Frac{\partial #1}{\partial #2}{#3}}
+\let \PartDeriv \PartialDerivative
 \newcommand{\UnnumberedDisplayEquations}[1]{$$#1$$}
 
 % Don't just just hate \begin{x} \end{x}? 
@@ -49,8 +59,11 @@
 
 % Enclosures
 \newcommand{\PAREN}[1]{\left(#1\right)}
+\let \Paren \PAREN
 \newcommand{\BRACK}[1]{\left[#1\right]}
+\let \Brack \BRACK
 \newcommand{\BRACE}[1]{\left{#1\right}}
+\let \Brace \BRACE
 
 % More Sweeteners
 \newcommand{\Set}[1]{\{#1\}}
