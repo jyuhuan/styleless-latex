@@ -6,6 +6,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
+\RequirePackage{mathtools}
 
 % Remove the spaces around \left([{ and \right)]}
 \let\originalleft\left
@@ -31,12 +32,13 @@
 \newcommand{\Cov}[1]{\mathrm{cov}\left[#1\right]}
 \newcommand{\ArgMax}[2]{\mathop{\arg \max}\limits_{#1} {#2} }
 \newcommand{\ArgMin}[2]{\mathop{\arg \min}\limits_{#1} {#2} }
-\newcommand{\Min}[2]{\mathop{\min}\limits_{#1} {#2} }
-\newcommand{\Max}[2]{\mathop{\max}\limits_{#1} {#2} }
+\newcommand{\Lim}[2]{\lim_{#1} {#2} }
+\newcommand{\Min}[2][]{\mathop{\min}\limits_{#1} {#2} }
+\newcommand{\Max}[2][]{\mathop{\max}\limits_{#1} {#2} }
 \newcommand{\Sum}[3][]{\sum_{#2}^{#1}{#3}}
 \newcommand{\Prod}[3][]{\prod_{#2}^{#1}{#3}}
-\newcommand{\Union}[3][]{\bigcup_{#2}^{#1}{#3}}
-\newcommand{\Intersect}[3][]{\bigcap_{#2}^{#1}{#3}}
+\newcommand{\BigUnion}[3][]{\bigcup_{#2}^{#1}{#3}}
+\newcommand{\BigIntersect}[3][]{\bigcap_{#2}^{#1}{#3}}
 \newcommand{\Frac}[2]{\dfrac{#1}{#2}}
 \newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\Ceiling}[1]{\left\lceil #1 \right\rceil}
@@ -53,21 +55,26 @@
 \newcommand{\UnnumberedAlignedEquations}[1]{\WrapIn{align*}{#1}}
 \newcommand{\CenteredEquations}[1]{\WrapIn{gather}{#1}}
 \newcommand{\UnnumberedCenteredEquations}[1]{\WrapIn{gather*}{#1}}
+\newcommand{\EquationWithID}[2]{#2 \id{#1}}
 
 % Semantic Symbols
 \newcommand{\Mul}[0]{\cdot}
 \newcommand{\XMul}[0]{\times}
+\newcommand{\Union}[0]{\cup}
+\newcommand{\Intersect}[0]{\cap}
 
 % Enclosures
 \newcommand{\PAREN}[1]{\left(#1\right)}
 \let \Paren \PAREN
 \newcommand{\BRACK}[1]{\left[#1\right]}
 \let \Brack \BRACK
-\newcommand{\BRACE}[1]{\left{#1\right}}
+\newcommand{\BRACE}[1]{\{#1\}}
 \let \Brace \BRACE
 
 % More Sweeteners
 \newcommand{\Set}[1]{\{#1\}}
+\newcommand{\Over}[0]{\middle/}
+\newcommand{\Abs}[1]{\left| #1 \right|}
 
 % Spacial characters
 \newcommand{\omicron}[0]{o}
@@ -261,4 +268,3 @@
 \newcommand{\bbX}[0]{\mathbb{X}}
 \newcommand{\bbY}[0]{\mathbb{Y}}
 \newcommand{\bbZ}[0]{\mathbb{Z}}
-

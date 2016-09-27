@@ -14,7 +14,8 @@
 \RequirePackage[ruled]{algorithm2e}
 \RequirePackage{graphicx}
 \RequirePackage[ruled]{algorithm2e}
-\RequirePackage[font=small,labelfont=bf]{caption}
+%\RequirePackage[font=small,labelfont=bf]{caption}
+\RequirePackage[table,xcdraw]{xcolor}
 
 % Package configurations
 \SetKwProg{Fn}{Function}{}{}
@@ -22,18 +23,26 @@
 % Don't just just hate \begin{x} \end{x}? 
 \newcommand{\WrapIn}[2]{\begin{#1} #2 \end{#1}}
 \newcommand{\Document}[1]{\WrapIn{document}{#1}}
-\newcommand{\Section}[2]{\section{#1} #2}
+\newcommand{\Section}[2]{\section{ #1 } #2 }
 \newcommand{\UnnumberedSection}[2]{\section*{#1} #2}
-\newcommand{\Subsection}[2]{\subsection{#1} #2}
+\newcommand{\Subsection}[2]{\subsection{ #1 } #2 }
 \newcommand{\UnnumberedSubsection}[2]{\subsection*{#1} #2}
-\newcommand{\Subsubection}[2]{\subsubsection{#1} #2}
-\newcommand{\UnnumberedSubsubection}[2]{\subsubsection*{#1} #2}
+\newcommand{\Subsubsection}[2]{\subsubsection{#1} #2}
+\newcommand{\UnnumberedSubsubsection}[2]{\subsubsection*{#1} #2}
+\newcommand{\Paragraph}[2]{\paragraph{#1} #2}
 \newcommand{\Abstract}[1]{\WrapIn{abstract}{#1}}
 \newcommand{\BlockQuote}[1]{\WrapIn{quote}{#1}}
 \newcommand{\Title}[2][]{\author{#1} \title{#2}\maketitle}
 \newcommand{\Algorithm}[2]{\WrapIn{algorithm}{\caption{#1}#2}}
 \newcommand{\Proof}[1]{\WrapIn{proof}{#1}}
-\newcommand{\CenteredFigure}[2][1.0]{\WrapIn{figure}{\centering \includegraphics[width=#1\textwidth]{#2}}}
+\newcommand{\CenteredFigureWithCaption}[5]{
+  \begin{figure}[#1]
+    \centering
+    \caption{#5}
+    \label{#4}
+    \includegraphics[width=#2\textwidth]{#3}
+  \end{figure}
+}
 %\newcommand{\}[1]{\begin{}#1\end{}}
 %\newcommand{\}[1]{\begin{}#1\end{}}
 
@@ -74,3 +83,12 @@
   \makeatother
 }
 \newcommand{\FooterWithPageOf}[0]{\cfoot{Page \thepage\ of \pageref{LastPage}}}
+\newcommand{\FooterWithSinglePageNumber}[0]{\cfoot{\thepage}}
+
+% Editing markers
+\newcommand{\Todo}[1]{\textcolor{red}{#1}}
+
+
+% Colors
+\definecolor{white-ish}{rgb}{0.99, 0.99, 0.99}
+
